@@ -26,17 +26,23 @@
         <div class="answers">
             <div class="main-container__main__correct-answers">
                 <ul style="list-style-image: url({% static 'icons/correct-mark.png' %});">
-                    <!--style="align-items: center" -->
+
                     {% if togriSoz %}
                     <li>{{ togriSoz.soz }}</li>
+                    {% else %}
+                    <li style="align-items: center" > Mavjud emas !</li>
                     {% endif %}
                 </ul>
             </div>
             <div class="main-container__main__incorrect-answers">
                 <ul style="list-style-image: url({% static 'icons/incorrect-mark.png' %});">
+                    {% if notogriSozlar %}
                     {% for i in notogriSozlar %}
                     <li> {{ i.soz }}</li>
                     {% endfor %}
+                    {% else %}
+                    <li style="align-items: center" > Mavjud emas !</li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
